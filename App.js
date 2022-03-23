@@ -16,7 +16,7 @@ export default function App() {
   // }, [colorScheme]);
 
   return (
-    <TouchableOpacity onPress={toggleColorScheme} style={[tw`dark:bg-black`, {alignItems: 'center', justifyContent: 'center',  flex:1}]}>
+    <View style={tw`flex h-full items-center justify-center bg-white dark:bg-gray-900 android:bg-gray-800`}>
       <View style={tw`w-3/4 h-70 rounded-xl bg-white dark:bg-gray-800 shadow-xl p-3 flex`}>
         <View style={tw`flex flex-row items-center`}>
           <Image source={{uri: 'https://randomuser.me/api/portraits/men/74.jpg'}} style={tw`w-20 h-20 rounded-full`} />
@@ -35,11 +35,17 @@ export default function App() {
         </View>
         <View style={tw`border-b border-gray-400 pt-2`} />
       </View>
-      <Text style={tw`text-black dark:text-white text-4xl p-5`}>
+      <Text style={tw`text-lg font-bold dark:text-white`}>New App</Text>
+      <Text style={tw`text-6xl p-3`}>
         {
-          colorScheme === 'dark' ? '🌙' : '🌞'
+          colorScheme === 'dark' ? '🌝' : '🌞'
         }
       </Text>
-    </TouchableOpacity>
+      <TouchableOpacity 
+        onPress={toggleColorScheme}
+        style={tw`bg-cyan-600 py-3 px-6 rounded mt-10`}>
+        <Text style={tw`text-white font-bold`}>My Button</Text>
+      </TouchableOpacity>
+    </View>
   );
 }
